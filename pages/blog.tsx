@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useIntl } from "react-intl";
-import BlogNews from "../components/blog/BlogNews";
-import BlogPosts from "../components/blog/BlogPosts";
-import Layout from "../components/Layout";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useIntl } from 'react-intl';
+import BlogNews from '../components/blog/BlogNews';
+import BlogPosts from '../components/blog/BlogPosts';
+import Layout from '../components/Layout';
 
 type Props = {
   posts?: any;
@@ -15,8 +15,8 @@ export default function Blog(props: Props) {
   const intl = useIntl();
   const { locale } = useRouter();
   const title = intl.formatMessage({
-    id: "pages.blog.title",
-    defaultMessage: "Blog",
+    id: 'pages.blog.title',
+    defaultMessage: 'Blog',
   });
   return (
     <div>
@@ -32,11 +32,7 @@ export default function Blog(props: Props) {
             <div className="flex flex-row flex-wrap">
               {props.categories
                 ? props.categories.map((category: any) => (
-                    <Link
-                      href={`/category/${category.attributes.name}`}
-                      key={category.id}
-                      passHref
-                    >
+                    <Link href={`/category/${category.attributes.name}`} key={category.id} passHref>
                       <div className="my-2 sm:my-auto cursor-pointer">
                         <b
                           key={category.attributes.name}
@@ -63,8 +59,8 @@ export default function Blog(props: Props) {
 export const getServerSideProps = async (context: any) => {
   const posts = await fetch(
     process.env.NEXT_PUBLIC_STRAPI_API +
-      "/api/posts?sort=date:desc&pagination[page]=1&pagination[pageSize]=21&populate=*&filters[type][$eq]=blog&locale=" +
-      context.locale
+      '/api/posts?sort=date:desc&pagination[page]=1&pagination[pageSize]=21&populate=*&filters[type][$eq]=blog&locale=' +
+      context.locale,
   )
     .then((response) => response.json())
     .then((response) => response.data)
@@ -72,8 +68,8 @@ export const getServerSideProps = async (context: any) => {
 
   const news = await fetch(
     process.env.NEXT_PUBLIC_STRAPI_API +
-      "/api/posts?sort=date:desc&pagination[page]=1&pagination[pageSize]=20&populate=*&filters[type][$eq]=news&locale=" +
-      context.locale
+      '/api/posts?sort=date:desc&pagination[page]=1&pagination[pageSize]=20&populate=*&filters[type][$eq]=news&locale=' +
+      context.locale,
   )
     .then((response) => response.json())
     .then((response) => response.data)
@@ -81,8 +77,8 @@ export const getServerSideProps = async (context: any) => {
 
   const categories = await fetch(
     process.env.NEXT_PUBLIC_STRAPI_API +
-      "/api/categories?pagination[pageSize]=20&locale=" +
-      context.locale
+      '/api/categories?pagination[pageSize]=20&locale=' +
+      context.locale,
   )
     .then((response) => response.json())
     .then((response) => response.data)
