@@ -27,7 +27,6 @@ export default function Blog(props: Props) {
       <div className="blog-blur-2"></div>
       <Layout title={title}>
         <div id="Blog" className="max-w-[1300px] mx-auto p-4 relative z-10">
-          {props.news ? <BlogNews news={props.news} /> : null}
           <div className="flex flex-row justify-between my-10 mx-4">
             <div className="flex flex-row flex-wrap">
               {props.categories
