@@ -38,7 +38,7 @@ let cards = [
   },
   {
     title: 'SECURE AND ACCESSIBLE',
-    text: 'we recognise that ordinary users who do not run a full node should enjoy the same security benefits as miners. Ergo’s non-interactive proof-of-proof-of-work (NiPoPoW) allows anyone to make and verify transactions with complete confidence, without needing the storage, bandwidth and time required to download the full blockchain. In fact, as little as 1 MB of data is required – meaning any device can be used.',
+    text: 'We recognise that ordinary users who do not run a full node should enjoy the same security benefits as miners. Ergo’s non-interactive proof-of-proof-of-work (NiPoPoW) allows anyone to make and verify transactions with complete confidence, without needing the storage, bandwidth and time required to download the full blockchain. In fact, as little as 1 MB of data is required – meaning any device can be used.',
     url: '/discover/#FAQ',
     buttoText: 'EXPLORE',
     icon: <UniqueErgo4 />,
