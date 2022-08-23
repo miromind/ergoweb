@@ -154,7 +154,7 @@ export default function Mining() {
         <br />
         <Button
           text="TELEGRAM"
-          url="https://t.me/ErgoChats"
+          url="https://t.me/Ergo_Chats"
           newTab={true}
           underline={true}
           textColor="brand-orange"
